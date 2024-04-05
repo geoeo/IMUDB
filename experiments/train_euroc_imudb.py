@@ -11,10 +11,10 @@ import uuid
 import re
 import socket
 
-tz = pytz.timezone('US/Pacific')
+tz = pytz.timezone('Europe/Vienna')
 
 
-def train(config_fp='configs/euroc_imudb.yaml'):
+def train(config_fp='configs/euroc_imudb_test.yaml'):
     with open(config_fp) as f:
         config = yaml.safe_load(f)
     time = datetime.datetime.now(tz=tz).isoformat()

@@ -9,32 +9,32 @@ pl.seed_everything(1234)
 
 def get_EUROC_LIMU_BERT(config):
     train_dataset = euroc_limu_bert.EUROCDataset(config=config,  mode='train')
-    train_loader = DataLoader(train_dataset, batch_size=config["data"]["batch_size"], shuffle=config["data"]["shuffle"]["train"], drop_last=True, num_workers=16)
+    train_loader = DataLoader(train_dataset, batch_size=config["data"]["batch_size"], shuffle=config["data"]["shuffle"]["train"], drop_last=True, num_workers=6)
     val_dataset = euroc_limu_bert.EUROCDataset(config=config,  mode='val')
-    val_loader = DataLoader(val_dataset, batch_size=config["data"]["batch_size"], shuffle=config["data"]["shuffle"]["val"], drop_last=True, num_workers=16)
+    val_loader = DataLoader(val_dataset, batch_size=config["data"]["batch_size"], shuffle=config["data"]["shuffle"]["val"], drop_last=True, num_workers=6)
     test_dataset = euroc_limu_bert.EUROCDataset(config=config, mode='test')
-    test_loader = DataLoader(test_dataset, batch_size=config["data"]["batch_size"], shuffle=config["data"]["shuffle"]["test"], drop_last=True, num_workers=16)
+    test_loader = DataLoader(test_dataset, batch_size=config["data"]["batch_size"], shuffle=config["data"]["shuffle"]["test"], drop_last=True, num_workers=6)
     return train_loader, val_loader, test_loader
 
 
 def get_EUROC_IMUDB(config):
     train_dataset = euroc_imudb.EUROCDataset(config=config,  mode='train')
-    train_loader = DataLoader(train_dataset, batch_size=config["data"]["batch_size"], shuffle=config["data"]["shuffle"]["train"], drop_last=True, num_workers=16)
+    train_loader = DataLoader(train_dataset, batch_size=config["data"]["batch_size"], shuffle=config["data"]["shuffle"]["train"], drop_last=True, num_workers=6)
     val_dataset = euroc_imudb.EUROCDataset(config=config,  mode='val')
-    val_loader = DataLoader(val_dataset, batch_size=config["data"]["batch_size"], shuffle=config["data"]["shuffle"]["val"], drop_last=True, num_workers=16)
+    val_loader = DataLoader(val_dataset, batch_size=config["data"]["batch_size"], shuffle=config["data"]["shuffle"]["val"], drop_last=True, num_workers=6)
     test_dataset = euroc_imudb.EUROCDataset(config=config, mode='test')
-    test_loader = DataLoader(test_dataset, batch_size=config["data"]["batch_size"], shuffle=config["data"]["shuffle"]["test"], drop_last=True, num_workers=16)
+    test_loader = DataLoader(test_dataset, batch_size=config["data"]["batch_size"], shuffle=config["data"]["shuffle"]["test"], drop_last=True, num_workers=6)
     return train_loader, val_loader, test_loader
 
 
 def get_TUMVI_IMUDB(config):
     train_dataset = tumvi_imudb.TUMVIDataset(config=config, mode='train')
     train_loader = DataLoader(train_dataset, batch_size=config["data"]["batch_size"],
-                              shuffle=config["data"]["shuffle"]["train"], drop_last=True, num_workers=16)
+                              shuffle=config["data"]["shuffle"]["train"], drop_last=True, num_workers=6)
     val_dataset = tumvi_imudb.TUMVIDataset(config=config, mode='val')
     val_loader = DataLoader(val_dataset, batch_size=config["data"]["batch_size"],
-                            shuffle=config["data"]["shuffle"]["val"], drop_last=True, num_workers=16)
+                            shuffle=config["data"]["shuffle"]["val"], drop_last=True, num_workers=6)
     test_dataset = tumvi_imudb.TUMVIDataset(config=config, mode='test')
     test_loader = DataLoader(test_dataset, batch_size=config["data"]["batch_size"],
-                             shuffle=config["data"]["shuffle"]["test"], drop_last=True, num_workers=16)
+                             shuffle=config["data"]["shuffle"]["test"], drop_last=True, num_workers=6)
     return train_loader, val_loader, test_loader
