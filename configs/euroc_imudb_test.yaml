@@ -18,9 +18,9 @@ data:
   batch_size: 1024
 
   # where are raw data ?
-  data_dir: "/root/EuRoC/Raw"
+  data_dir: "/root/data/EuRoC/Raw"
   # where record preloaded data ?
-  caches_dir: "/root/EuRoC/Preload"
+  caches_dir: "/root/data/EuRoC/Preload"
   # set train, val and test sequence
   train_seqs: [
       'MH_01_easy',
